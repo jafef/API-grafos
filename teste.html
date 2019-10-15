@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" type="text/css"> 
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="lib/arbor.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="lib/arbor-tween.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="src/graphics/colors.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="src/graphics/primitives.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="src/graphics/graphics.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="lib/renderer.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="lib/renderer.js"
+  ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="src/kernel.js"
+  ></script>
+     <script
+      language="javascript"
+      type="text/javascript"
+      src="src/tween/easing.js"
+  ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="src/tween/tween.js"
+  ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="src/physics/atoms.js"
+  ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="src/physics/physics.js"
+  ></script>
+  <script
+    language="javascript"
+    type="text/javascript"
+    src="src/physics/system.js"
+></script>  
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="src/dev.js"
+></script>  
+    <title>VEM N</title>
+  </head>
+  <body>
+    <!-- <h1>Grafos tnc</h1> -->
+    <canvas id="viewport" width="600" height="600"></canvas>
+
+    <script type="text/javascript">
+      var sys = arbor.ParticleSystem(1000, 400, 1);
+      sys.parameters({ gravity: true });
+
+      sys.renderer = Renderer("#viewport");
+      var data = {
+        nodes: {
+          pessoa1: {
+            color: "rgb(70,92,235)",
+            shape: "dot",
+            label: "jander"
+          },
+          pessoa2: {
+            color: "rgb(70,92,235)",
+            shape: "dot",
+            label: "miguel"
+          },
+          pessoa3: {
+            color: "rgb(70,92,235)",
+            shape: "dot",
+            label: "caique"
+          },
+          livro1: {
+            color: "rgb(235,175,70)",
+            shape: "dot",
+            label: "C#"
+          },
+          livro2: {
+            color: "rgb(235,175,70)",
+            shape: "dot",
+            label: "HTML"
+          },
+          livro3: {
+            color: "rgb(235,175,70)",
+            shape: "dot",
+            label: "Java"
+          },
+          livro4: {
+            color: "rgb(235,175,70)",
+            shape: "dot",
+            label: "Pequeno Principe"
+          },
+          livro5: {
+            color: "rgb(235,175,70)",
+            shape: "dot",
+            label: "KamaSutra"
+          }
+        },
+        edges: {
+          pessoa1: {
+            livro1: {},
+            livro2: {}
+          },
+          pessoa2: {
+            livro3: {},
+            livro4: {},
+            livro5: {}
+          },
+          pessoa3: {
+            livro5: {}
+          }
+        }
+      };
+      sys.graft(data);
+    </script>
+  </body>
+</html>
